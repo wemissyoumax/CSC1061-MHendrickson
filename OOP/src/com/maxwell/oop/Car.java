@@ -11,10 +11,9 @@ public class Car {
 	public int grndClearanceIn;
 	private int id;
 	private boolean isClean;
-	
-	private static int count = 0;
-	
 	private Radio radio = new Radio();
+	private static int count = 0;
+	private Wheel wheel1;
 	
 	
 	// Constructors
