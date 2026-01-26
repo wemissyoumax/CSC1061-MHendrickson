@@ -7,16 +7,28 @@ public class Car {
 	private double amountOfGas;
 	private int mileage;
 	public int grndClearance;
+	public int grndClearanceFt;
+	public int grndClearanceIn;
+	private int id;
+	private boolean isClean;
+	
+	private static int count = 0;
+	
+	private Radio radio = new Radio();
+	
 	
 	// Constructors
 	public Car(String rcolor) {
 		color = rcolor;
 		amountOfGas = 1.0;
 		mileage = 5;
+		count++; // All constructors should have this if we are keeping count
+		id = count;
+		radio.setVolume(3);
 	}
 	
 	public Car() {
-		
+		count++;
 	}
 	
 	public Car(String color, double gas) {
@@ -41,7 +53,11 @@ public class Car {
 	public void setAmountOfGas(double amountOfGas) {
 		this.amountOfGas = amountOfGas;
 	}
-
+	
+	public boolean isClean() {
+		return isClean;
+	}
+	
 	public int getMileage() {
 		return mileage;
 	}
@@ -52,7 +68,17 @@ public class Car {
 
 	public void setGrndClearance(int grndClearance) {
 		this.grndClearanceFt = grndClearance/12;
-		this.grndClearanceInches = grndClearance % 12;
+		this.grndClearanceIn = grndClearance % 12;
+	}
+	
+	// Getter for count method
+	public static int getCount() {
+		
+		return count;
+	}
+	
+	public int getId () {
+		return id;
 	}
 	
 	//Methods
@@ -63,6 +89,18 @@ public class Car {
 		mileage = mileage + numMiles;
 		amountOfGas -= numMiles;
 		System.out.println();
+	}
+	
+	public void selfCleanCar() {
+		isClean = true;
+	}
+	
+	public static void cleanCar(Car car) {
+		car.isClean = true;
+	}
+	
+	public Radio getRadio() {
+		return radio;
 	}
 	
 	//toString()
