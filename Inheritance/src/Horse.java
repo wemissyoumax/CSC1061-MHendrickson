@@ -7,4 +7,10 @@ public class Horse extends Animal{
 	public String makeSound() {
 		return "Neigh neigh";
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "Horse [speed=" + speed + "]";
+	}
+	
 }
