@@ -1,0 +1,112 @@
+CLASS:Student
+Name:Alice Johnson
+Address:123 Maple St, Springfield
+Phone:555-1234
+Email:alice.johnson@frcc.edu
+Status:freshman
+---
+CLASS:Student
+Name:Bob Smith
+Address:456 Oak Ave, Shelbyville
+Phone:555-5678
+Email:bob.smith@frcc.edu
+Status:junior
+---
+CLASS:Faculty
+Name:Dr. Carol White
+Address:789 Elm Rd, Springfield
+Phone:555-9101
+Email:carol.white@frcc.edu
+Office:Room 201
+Salary:85000.0
+DateHired:2015-08-15
+OfficeHours:Mon/Wed 10am-12pm
+Rank:senior
+---
+CLASS:Faculty
+Name:Dr. David Brown
+Address:321 Pine St, Springfield
+Phone:555-1121
+Email:david.brown@frcc.edu
+Office:Room 305
+Salary:72000.0
+DateHired:2020-01-10
+OfficeHours:Tue/Thu 1pm-3pm
+Rank:junior
+---
+CLASS:Staff
+Name:Eve Davis
+Address:654 Birch Blvd, Shelbyville
+Phone:555-3141
+Email:eve.davis@psd.edu
+Office:Admin Office
+Salary:45000.0
+DateHired:2018-03-22
+Title:Administrative Coordinator
+---
+CLASS:Staff
+Name:Frank Miller
+Address:987 Cedar Ln, Springfield
+Phone:555-5161
+Email:frank.miller@psd.edu
+Office:IT Department
+Salary:52000.0
+DateHired:2019-07-01
+Title:IT Support Specialist
+---
+CLASS:Student
+Name:Alice Johnson
+Address:123 Maple St, Springfield
+Phone:555-1234
+Email:alice.johnson@frcc.edu
+Status:freshman
+---
+CLASS:Student
+Name:Bob Smith
+Address:456 Oak Ave, Shelbyville
+Phone:555-5678
+Email:bob.smith@frcc.edu
+Status:junior
+---
+CLASS:Faculty
+Name:Dr. Carol White
+Address:789 Elm Rd, Springfield
+Phone:555-9101
+Email:carol.white@frcc.edu
+Office:Room 201
+Salary:85000.0
+DateHired:2015-08-15
+OfficeHours:Mon/Wed 10am-12pm
+Rank:senior
+---
+CLASS:Faculty
+Name:Dr. David Brown
+Address:321 Pine St, Springfield
+Phone:555-1121
+Email:david.brown@frcc.edu
+Office:Room 305
+Salary:72000.0
+DateHired:2020-01-10
+OfficeHours:Tue/Thu 1pm-3pm
+Rank:junior
+---
+CLASS:Staff
+Name:Eve Davis
+Address:654 Birch Blvd, Shelbyville
+Phone:555-3141
+Email:eve.davis@psd.edu
+Office:Admin Office
+Salary:45000.0
+DateHired:2018-03-22
+Title:Administrative Coordinator
+---
+CLASS:Staff
+Name:Frank Miller
+Address:987 Cedar Ln, Springfield
+Phone:555-5161
+Email:frank.miller@psd.edu
+Office:IT Department
+Salary:52000.0
+DateHired:2019-07-01
+Title:IT Support Specialist
+---
