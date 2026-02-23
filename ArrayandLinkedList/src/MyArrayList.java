@@ -2,6 +2,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.ArrayList;
 
 public abstract class MyArrayList<T> implements List {
 	private T[] array;
@@ -33,8 +34,33 @@ public abstract class MyArrayList<T> implements List {
 	}
 
 	@Override
-	public Iterator iterator() {
-		return null;
+	public Iterator<T> iterator() {
+		return new MyIterator();
+	}
+	
+	//Nested class for Iterator behavior
+	private class MyIterator implements Iterator<T> {
+		
+		private int index = 0;
+		
+		//"Do I have another element to return to you?"
+		@Override
+		public boolean hasNext() {
+			if (index < size) {
+				return true;
+			}
+			return false;
+		}
+		
+		//Gets the next element and gives it to you
+		@Override
+		public T next() {
+			if (index >= size) {
+				throw new IndexOutOfBoundsException("Index exceeds size");
+			}
+			return array[index];
+		}
+		
 	}
 
 	@Override
@@ -59,13 +85,18 @@ public abstract class MyArrayList<T> implements List {
 			array = bigger;
 		}
 		array[size++] = e;
-		// size++;
+		size++;
 		return true;
 	}
 
 	@Override
 	public boolean remove(Object o) {
-		return false;
+		int index = indexOf(o);
+		if(index < 0) {
+			return false;
+		}
+		remove(index);
+		return true;
 	}
 
 	@Override
@@ -89,7 +120,13 @@ public abstract class MyArrayList<T> implements List {
 	@Override
 	public boolean removeAll(Collection<?> c) {
 		boolean flag = true;
-		return false;
+		for(Object obj: c) {
+			if (remove(obj)) {
+				flag = true;
+			}
+			
+		}
+		return flag;
 	}
 
 	@Override
