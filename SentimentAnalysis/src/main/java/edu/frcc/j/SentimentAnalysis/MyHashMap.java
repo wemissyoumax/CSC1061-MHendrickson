@@ -1,4 +1,4 @@
-package edu.frcc.j.MyHashMap;
+package edu.frcc.j.SentimentAnalysis;
 
 import java.util.Collection;
 import java.util.HashSet;
