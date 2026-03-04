@@ -1,4 +1,4 @@
-package edu.frcc.j.MyHashMap;
+package edu.frcc.j.SentimentAnalysis;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
