@@ -236,6 +236,7 @@ public class MyDoubleLinkedList<E> implements List<E> {
 			if(((E)o).equals(node.data)) {
 				return i;
 			}
+			node = node.next;
 		}
 		return -1;
 	}
@@ -247,6 +248,7 @@ public class MyDoubleLinkedList<E> implements List<E> {
 			if(((E)o).equals(node.data)) {
 				return i;
 			}
+			node = node.prev;
 		}
 		return -1;
 	}
@@ -269,5 +271,27 @@ public class MyDoubleLinkedList<E> implements List<E> {
 		return null;
 	}
 	
+	public void reverse() {
+		//If list is empty, just exit
+		if (head == null || head == tail) {
+			return;
+		}
+		Node current = head;
+		while (current != null) {
+			//Swap current.next and current.prev
+			Node temp = current.next;
+			current.next = current.prev;
+			current.prev = temp;
+			current = temp;
+			
+		}
+		Node temp = head;
+		head = tail;
+		tail = temp;
+	}
+	
+	public int count() {
+		return size;
+	}
 	
 }
