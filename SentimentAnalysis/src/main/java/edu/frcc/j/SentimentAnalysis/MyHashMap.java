@@ -109,9 +109,11 @@ public class MyHashMap<K,V> implements Map<K, V>{
 			}
 		}
 		// Key doesn't exist, add entry
-		//TODO: Check if the load factor threshold has been exceeded
-		// and take action
-		// rehash()
+		if((double) size / buckets.length > LOAD_FACTOR_THRESHOLD) {
+			rehash();
+			bucketIndex = Math.abs(key.hashCode()) % buckets.length;
+			bucket = buckets[bucketIndex];
+		}
 		if(bucket == null) {
 			bucket = new LinkedList<Entry<K, V>>();
 			buckets[bucketIndex] = bucket;
@@ -124,7 +126,16 @@ public class MyHashMap<K,V> implements Map<K, V>{
 	
 	// Write public function rehash()
 	private void rehash() {
-		
+		LinkedList<Entry<K,V>>[] oldBuckets = buckets;
+		buckets = new LinkedList[oldBuckets.length * 2];
+		size = 0;
+		for(int i = 0; i < oldBuckets.length; i++) {
+			if(oldBuckets[i] != null) {
+				for(Entry<K,V> entry : oldBuckets[i]){
+					put(entry.getKey(), entry.getValue());
+				}
+			}
+		}
 	}
 	@Override
 	public V remove(Object key) {
