@@ -1,7 +1,9 @@
 package edu.frcc.csc.j.MyTreeSet;
 
+import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Queue;
 import java.util.Set;
 
 public class MyTreeSet <E extends Comparable<E>> implements Set <E>{
@@ -40,8 +42,30 @@ public class MyTreeSet <E extends Comparable<E>> implements Set <E>{
 
 	@Override
 	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return InOrderRecursive;
+	}
+	
+	private class InOrderRecursive implements Iterator<E>{
+		private Queue<E> queue = new ArrayDeque<>();
+		public InOrderRecursive() {
+			inorder(root);
+		}
+		private void inorder(Node node) {
+			if(node ==  null) {
+				return;
+			}
+			inorder(node.lChild);
+			queue.add(node.data);
+			inorder(node.rChild);
+		}
+		@Override
+		public boolean hasNext() {
+			return !queue.isEmpty();
+		}
+		@Override
+		public E next() {
+			return queue.remove();
+		}
 	}
 
 	@Override

@@ -14,4 +14,15 @@ public class MyTreeSetTest {
 	set.add(9);
 	set.add(10);
 	set.add(11);
+	set.add(12);
+	set.add(13);
+	set.add(14);
+	set.add(15);
+	
+	System.out.println("Height of tree: " + set.getTreeHeight());
+	
+	for(Integer value : set) {
+		System.out.print(value + " ");
+	}
+	System.out.println();
 }
