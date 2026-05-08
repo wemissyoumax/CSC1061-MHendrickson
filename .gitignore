@@ -1,3 +1,20 @@
 /.metadata/
+
+# Large binary/media files
 *.mp4
+*.mp3
+*.wav
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# Maven build output (catch-all for any project missing a local .gitignore)
+**/target/
+
+# Eclipse build output
+**/bin/
+
+# Test data folders with large files
 Exam2/FileSizeTest/
